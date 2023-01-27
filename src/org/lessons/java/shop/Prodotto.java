@@ -5,10 +5,8 @@ import java.util.Random;
 public class Prodotto {
 	int codice;
 	String nome;
-	String nomeCompletoProdotto;
 	String descrizione;
 	float prezzo;
-	float prezzoIvato;
 	float iva = 22;
 	
 	public Prodotto(String nome, String descrizione, float prezzo) {
@@ -25,11 +23,11 @@ public class Prodotto {
 	}
 	
 	public float getPrezzoIvato() {
-		return this.prezzoIvato = this.prezzo *  ( this.iva/100 + 1 );
+		return this.prezzo * ( this.iva/100 + 1 );
 	}
 	
 	public String getNomeCompletoProdotto() {
-		return this.nomeCompletoProdotto = this.codice + "-" + this.nome;
+		return this.codice + "-" + this.nome;
 	}
 	
 	public String getDescrizione() {
