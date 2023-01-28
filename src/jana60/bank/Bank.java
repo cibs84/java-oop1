@@ -10,6 +10,7 @@ public class Bank {
 		Scanner scan = new Scanner(System.in);
 		Random rand = new Random();
 		Conto conto = new Conto();
+		boolean loopExit = false;
 		
 		System.out.println("Inserisci il tuo nome per creare un nuovo conto:");
 		conto.setNomeProprietario(scan.nextLine());
@@ -17,12 +18,10 @@ public class Bank {
 		
 		System.out.println("Ciao " + conto.getNomeProprietario() + ", abbiamo creato il tuo nuovo conto n." + conto.getNumeroConto() + "\n");
 		
-		while (true) {
+		while (!loopExit) {
 			System.out.println("Scegli il numero dell'operazione da effettuare");
 			System.out.println("1-Versare | 2-Prelevare | 3-Uscire");
 			int operazione = Integer.parseInt(scan.nextLine());
-			
-			boolean loopExit = false;
 			
 			switch (operazione) {
 				case 1:
@@ -41,7 +40,6 @@ public class Bank {
 				default:
 					System.out.println("Scelta non corretta. Inserire un numero da 1 a 3 \n");
 			}
-			if (loopExit) break;
 		}
 		scan.close();
 	}
