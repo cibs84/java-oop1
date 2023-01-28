@@ -14,8 +14,8 @@ public class Prodotto {
 		this.descrizione = descrizione;
 		this.prezzo = prezzo;
 		
-		Random r = new Random();
-		this.codice = r.nextInt(100000000);
+		Random rand = new Random();
+		this.codice = rand.nextInt(100000000);
 	}
 	
 	public float getPrezzoBase() {
@@ -27,10 +27,14 @@ public class Prodotto {
 	}
 	
 	public String getNomeCompletoProdotto() {
-		return this.codice + "-" + this.nome;
+		return this.getCodicePad() + "-" + this.nome;
 	}
 	
 	public String getDescrizione() {
 		return this.descrizione;
+	}
+	
+	public String getCodicePad() {
+		return String.format("%08d", this.codice);
 	}
 }
